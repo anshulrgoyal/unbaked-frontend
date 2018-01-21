@@ -1,0 +1,16 @@
+<mat-card class="re">
+  <mat-card-header>
+     
+        
+  <mat-card-title>
+    <div class="cap">
+        <mat-icon *ngIf="comment.author.image=='default'">account_circle</mat-icon>
+        <img mat-card-avatar [src]="comment.author.image" alt="" class="comment-img" *ngIf="comment.author.image!='default'">
+        {{comment.author.first}}
+    </div>
+      
+    </mat-card-title> 
+</mat-card-header>
+{{comment.text}}   
+
+</mat-card>

@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<p *ngIf="show" style="margin-left:35%;margin-top:300px; font-Size:30px;color:gray;font-weight:500px;">
+  please verify your email-id!! <br>
+  check your email.......... <br>
+  <button mat-button class="btn" (click)="showDone()" *ngIf="!showen">
+    resend email
+  </button>
+    <div *ngIf="showen1" style="margin-left:35%;margin-top:30px; font-Size:30px;color:gray;font-weight:500px;">
+      
+      Email is send to your id
+    </div> 
+   
+
+<app-m text="Tell Us About You" *ngIf="!show"></app-m>
+<div class="container" *ngIf="!show">
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <mat-card id="box">
+    <mat-form-field class="input">
+      <input type="text" matInput required ngModel name="first"  placeholder="Full Name">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="input">
+      <input type="email" matInput required ngModel name="email"  placeholder="Email">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="input">
+      <input type="text" matInput required ngModel name="tags"  placeholder="Intersets">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="input">
+      <input type="text" matInput ngModel name="image"  placeholder="Image">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="input">
+        <input type="text" matInput required ngModel name="username"  placeholder="User Name">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="input">
+          <input type="password" matInput required ngModel name="password"  placeholder="Password">
+        </mat-form-field>
+        <br>
+          <br>
+
+    <button type="submit" mat-button [disabled]="!form.valid">Submit</button>
+  </mat-card>
+
+  </form>
+</div>

@@ -1,0 +1,19 @@
+#box{
+    margin: 20%;
+    padding: 5%;
+    margin-top: 5%;
+}
+.input{
+    width: 100%;
+    margin-top:40px;
+}
+@media only screen and (min-width:768){
+    #box{
+        margin: 0%;
+        padding: 2%;
+        margin-top: 3%;
+    }
+}
+.btn{
+    border-radius: 150px;
+}

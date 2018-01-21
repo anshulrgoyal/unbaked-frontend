@@ -1,0 +1,18 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+button{
+    color:white !important;
+    background-color: #E91E63 !important;
+    margin-top:10px !important;
+    margin-bottom: 10px !important;
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+}
+body{
+    background-color: ghostwhite;
+}
+[mat-button]{
+    font-weight: 700 !important;
+    background-color: #E91E63;
+    color: white !important;
+
+}

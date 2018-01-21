@@ -1,0 +1,64 @@
+<div *ngIf="show">
+    <app-header></app-header>
+    <div class="container">
+            
+    </div>
+    
+</div>
+<mat-progress-spinner
+class="example-margin"
+color="warn"
+mode="indeterminate"
+*ngIf="!show">
+</mat-progress-spinner>
+<div class="container" *ngIf="show">
+<div class="heading">
+  <div class="main">
+    Blogs trending this week......
+  </div>
+</div>
+  <div class="row">
+    <div class="col-lg-3 col-sm-12 col-md-4" *ngFor="let item of best,let content of contens">
+      <app-card [card]="item"></app-card>
+      <br>
+    </div>
+  </div>
+  <div class="heading">
+      <div class="main">
+        Latest Blogs
+      </div>
+    </div>
+  <div class="row">
+      <div class="col-lg-3 col-sm-12 col-md-4" *ngFor="let item of neww,let content of contens">
+        <app-card [card]="item" ></app-card>
+        <br>
+      </div>
+    </div>
+    <div class="heading">
+        <div class="main">
+          Most Liked
+        </div>
+      </div>
+    <div class="row">
+        <div class="col-lg-3 col-sm-12 col-md-4" *ngFor="let item of viral,let content of contens">
+          <app-card [card]="item" ></app-card>
+          <br>
+        </div>
+      </div>
+      <div class="heading">
+          <div class="main">
+           Recommened For You
+          </div>
+        </div>
+      <div class="row">
+          <div class="col-lg-3 col-sm-12 col-md-4" *ngFor="let item of best,let content of contens">
+            <app-card [card]="item" ></app-card>
+            <br>
+          </div>
+        </div>
+        
+</div>
+
+
+
+

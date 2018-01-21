@@ -1,0 +1,94 @@
+<app-navbar></app-navbar>
+<app-homepage *ngIf="!done"></app-homepage>
+<app-m [text]="card.name" *ngIf="done"></app-m>
+<mat-drawer-container class="example-container" *ngIf="done">
+  <mat-drawer-content>
+
+    <div class="colorr">
+      <br>
+      <div class="small">
+        <div class="container">
+       
+          <img [src]="card.image" alt="" class="image">
+          <div class="blog">
+            {{card.text}}
+          </div>
+        </div>
+      </div>
+      
+              
+         <mat-card>
+          <mat-icon class="icon" *ngIf="show" (click)="liked()" >favorite</mat-icon>
+          <mat-icon class="icon" *ngIf="!show" (click)="liked()" style="color:#e91e63">favorite</mat-icon>
+
+      
+      
+        <br> Liked By: {{card.like}}
+    
+      
+          
+      
+         </mat-card>
+                  
+            
+    
+         
+      </div>
+     
+      <div class="heading">
+        <div class="main">
+          You May Like.....
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 col-sm-4" *ngFor="let item of data">
+            <app-card-new [card]="item"></app-card-new>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <mat-accordion>
+          <mat-expansion-panel
+          (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Comment
+              </mat-panel-title>
+              <mat-panel-description>
+                {{panelOpenState ? 'View all comments' : 'All comments'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngFor="let comments of card.comment">
+              <app-comment [comment]="comments"></app-comment>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Add Comment
+              </mat-panel-title>
+              <mat-panel-description>
+                Join Dicussion
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <form (ngSubmit)="onSubmit(form)" #form='ngForm'>
+            <mat-form-field class="example-full-width">
+             
+                  <input matInput placeholder="Comment" value="" ngModel name="text">
+             
+            </mat-form-field>
+            <button mat-button type="submit">Submit</button>
+          </form>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    
+    <a [routerLink]="['/',card._id,'edit']"><button mat-button>edit</button></a>
+    <div class="footer">
+      Made with love by Anshul
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

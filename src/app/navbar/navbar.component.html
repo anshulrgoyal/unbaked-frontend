@@ -1,0 +1,67 @@
+<mat-toolbar color="warn" class="fixed bar">
+      <mat-toolbar-row *ngIf="!search">
+            <a [routerLink]="['/']"></a>
+            <a [routerLink]="'/'">
+                  <mat-icon>home</mat-icon>
+            </a>
+            
+            <a  routerLink="/new">Add New Blog</a>
+            <span class="fill"></span>
+            <input type="text" class="serch" placeholder="search" *ngIf="!second" (change)="onChange($event)">
+           <a [routerLink]="['/','search',value]" >
+            <mat-icon *ngIf="!second">search</mat-icon>
+      </a>
+           
+            
+                 <button (click)="showSearch()">
+                  <mat-icon (click)="showSearch()" *ngIf="second">search</mat-icon>
+                 </button> 
+       
+            <div *ngIf="showboth">
+                  <button  (click)="showIt()" class="signbtn">Sign In</button>
+                 
+                             
+                  <a  class="signbtn" [routerLink]="['/','signup']" *ngIf="showit">Sign UP</a>
+            </div>
+            <div *ngIf="!showboth">
+           <button>
+            <mat-icon *ngIf="token.image=='default'">account_circle</mat-icon>
+           </button>       
+           <a>
+            <img src={{token.image}} class="nav-image" *ngIf="token.image!='default'">
+           </a> 
+                
+                  
+            </div>
+            <div *ngIf="!showboth">
+                        <a class="signbtn" (click)="logout()" >
+                                    Logout
+                              </a>
+               </div>
+      </mat-toolbar-row>
+      <mat-toolbar-row *ngIf="search">
+            <mat-icon (click)="showSearch()">arrow_back</mat-icon>
+            <input type="text" class="serch2" placeholder="search" (change)="onChange($event)">
+            <a [routerLink]="['/','search',value]" >
+                  <mat-icon>search</mat-icon>
+            </a>
+            
+      </mat-toolbar-row>
+</mat-toolbar>
+<div *ngIf=show class=sign>
+      <div class="red" *ngIf="error">
+            Invalid Password/Username
+      </div>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <mat-form-field>
+                  <input type="email" matInput placeholder="Email" name="email" ngModel required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                  <input type="password" matInput placeholder="Password" name="password" ngModel required>
+            </mat-form-field>
+            <br>
+            <button type="submit" mat-button  [disabled]="!f.valid"> Log in</button>
+      </form>
+
+</div>

@@ -1,0 +1,15 @@
+.comment-img{
+    margin:10px;
+    border-radius: 50%;
+    height: 40px;
+    width:40px;
+    
+}
+.re{
+background-color:#E91E63;
+margin:10px;
+color:white;
+}
+.cap{
+    text-transform: uppercase;
+}

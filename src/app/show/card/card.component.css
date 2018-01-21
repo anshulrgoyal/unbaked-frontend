@@ -1,0 +1,22 @@
+a{
+    color:white;
+    background-color: #E91E63;
+    margin-left: 90px;
+}
+.icon{
+    margin-top: 50px;
+}
+.title{
+    font-weight: 500;
+    color: #E91E63;
+    font-size: 26px;
+}
+@keyframes mymove {
+    0%   {transform: translateX(30px );
+    opacity: 0%}
+    100% {opacity: 100%;
+    transform: translateY(0px)}
+}
+.animata{
+   opacity: 0%;
+}

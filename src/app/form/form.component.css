@@ -1,0 +1,17 @@
+.example-full-width{
+    width: 100%
+}
+textarea{
+    width: 100%
+}
+.file{
+    text-decoration: none;
+    padding: 0px;
+    
+}
+.putt{
+    text-align: left;
+}
+.btn{
+    display: inline-block
+}

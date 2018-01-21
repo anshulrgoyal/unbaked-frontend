@@ -1,0 +1,26 @@
+.container-my{
+   margin:0,auto;
+   background-color: rgb(218, 218, 240);
+}
+.heading{
+    padding: 20px;
+    padding-block-start: 2px;
+    border-left: 8px solid  #E91E63 ;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: ghostwhite;
+    
+    
+}
+.main{
+    margin-top: 40px;
+    display: inline-block;
+    font-size: 32px;
+    color:#E91E63;
+    font-weight: 600
+}
+.example-margin{
+ 
+    margin: 0 auto;
+    margin-top: 300px;
+}

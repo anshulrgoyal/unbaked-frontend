@@ -1,0 +1,29 @@
+.row-my {
+    max-width: 114rem;
+    margin: 0 auto; }
+    .row-my:not(:last-child) {
+      margin-bottom: 8rem; }
+    .row-my::after {
+      content: "";
+      display: table;
+      clear: both; }
+    .row-my [class^="col-"] {
+      float: left; }
+      .row-my [class^="col-"]:not(:last-child) {
+        margin-right: 6rem; }
+    .row-my .col-1-of-2 {
+      width: calc((100% - 6rem) / 2); }
+    .row-my .col-1-of-3 {
+      width: calc((100% - 2 * 6rem) / 3); }
+    .row-my .col-2-of-3 {
+      width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+    .row-my .col-1-of-4 {
+      width: calc((100% - 3 * 6rem) / 4); }
+    .row-my .col-2-of-4 {
+      width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+    .row-my .col-3-of-4 {
+      width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+body{
+  padding: 0;
+  margin: 0;
+}

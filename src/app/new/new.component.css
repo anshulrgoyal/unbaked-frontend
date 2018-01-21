@@ -1,0 +1,12 @@
+.block{
+    padding: 100px;   
+   text-align: center;
+   background-color: #E91E63;
+   }
+   .heading{
+       display: inline-block;
+       color:White;
+       font-size: 40px;
+      
+   }
+   

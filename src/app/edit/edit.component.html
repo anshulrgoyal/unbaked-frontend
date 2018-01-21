@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<app-m text="Edit Your Blog"></app-m>
+
+
+ 
+
+        <div class="container">
+            <div class="row" style="margin-top:100px">
+                <div class="col-lg-6 ">
+
+
+
+                    <div class="block">
+                        <div class="heading-blog">
+                            {{blog.name}}
+                        </div>
+                    </div>
+
+
+                    <img [src]="blog.image" alt="" class="image">
+                    <div class="blog col-lg-12">
+
+
+                        <textarea name="" id="tes" cols="100" rows="100">
+                        {{blog.text}}
+                </textarea>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="put">
+                        <form #form="ngForm" (submit)="onsubmit(form)">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <button mat-button (click)="delete($event)">
+                                        Delete
+                                    </button>
+                                </div>
+                                <div class="col-lg-3"></div>
+                                <div class="col-lg-3"></div>
+                                <div class="col-lg-3">
+                                    <button mat-button class="btn" (click)="onsubmit(form)">Submit</button>
+                                </div>
+                            </div>
+
+
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Enter" [(ngModel)]="blog.name" name="name">
+
+                            </mat-form-field>
+                            <br>
+                            <br>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Image URL" [(ngModel)]="blog.image" name="image">
+                            </mat-form-field>
+                            <br>
+                            <br>
+                            <input type="file" placeholder="upload image" class="file">
+                            <br>
+                            <br> write your blog here
+                            <br>
+                            <hr>
+                            <br>
+                            <textarea name="text" matInput cols="100" rows="100" placeholder="Write Your Blog Here" [(ngModel)]="blog.text" style="width: 100%"></textarea>
+
+                            <br>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+   

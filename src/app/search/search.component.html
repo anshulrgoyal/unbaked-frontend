@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<app-homepage *ngIf="!done"></app-homepage>
+<div *ngIf="done">
+    <app-m [text]="show" *ngIf="result[0]" ></app-m>
+</div>
+
+<div class="block" *ngIf="!result[0]">
+  no result found <br>
+:( <br>
+<a [routerLink]="['/','new']" mat-button >
+  create one!
+</a>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container" nfIf="result[0]">
+    <div class="row" *ngIf="done">
+        <div class="col-lg-4" *ngFor="let card of result" >
+            <app-card [card]="card"></app-card> 
+        </div>
+         
+        </div>
+</div>

@@ -1,0 +1,84 @@
+.bg{
+    border-right: 5px solid black;
+}
+.container-my{
+    margin:0,auto;
+ }
+ .heading{
+     padding: 20px;
+     padding-block-start: 2px;
+     border-left: 8px solid #3F51B5 ;
+     margin-top: 20px;
+     
+     
+ }
+ .main{
+     margin-top: 40px;
+     display: inline-block;
+     font-size: 32px;
+     color:#3F51B5;
+     font-weight: 600
+ }
+ .comment-group{
+     background-color:  rgb(236, 221, 221);
+     width:100%;
+ }
+ .comment{
+     background-color: ghostwhite;
+ }
+ .comment-image{
+     height: .30px;
+     width: 30px;
+     border-radius: 150%;
+ }
+ .cooment-text{
+     color:black;
+     font-size: 16px;
+     
+ }
+ .den{
+     width: 200%;
+ }
+ .example-full-width {
+    width: 100%;
+  }
+  .blog{
+      margin: 100px;
+      word-spacing: 3px;
+      letter-spacing: 1.5px;
+      width: 50%;
+  }
+  .small{
+      margin: 0,200px;
+  }
+  .heading-blog{
+      display: inline-block;
+      font-size: 50px;
+      color:#3F51B5;
+      font-weight: 700;
+      transition: all .2s;
+  }
+  .heading-blog:hover{
+      transform: skewX(-40deg) skewY(2deg)
+  }
+  .block{
+      text-align: center;
+      padding: 40px;
+  }
+  .colorr{
+      margin-bottom: 50px;
+      
+  }
+  .footer{
+      background-color: #3F51B5;
+      color:white;
+      text-align: center;
+     padding:20px;
+      margin-top:20px;
+  }
+ .image{
+     height: 150px;
+     display: block;
+     margin: 0 auto;
+     
+ }
