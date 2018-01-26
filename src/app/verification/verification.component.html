@@ -1,0 +1,13 @@
+
+  <app-homepage *ngIf="!done"></app-homepage>
+  <div
+  *ngIf="done">
+  
+   <div class="block" *ngIf="!err">
+    Email verification is under way
+   </div> 
+      <div  class="block" *ngIf="err">
+        Error occured :(<br>
+        try after some time;
+      </div>
+</div>

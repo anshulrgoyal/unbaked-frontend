@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { Location, PopStateEvent } from "@angular/common";
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,13 @@ export class AppComponent implements OnInit {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  constructor(private router: Router, private location: Location) { }
+  constructor(private router: Router, private location: Location,private meta:Meta) {
+    meta.addTags([
+      { name: 'author',   content: 'unbakedpotao'},
+      { name: 'keywords', content: 'blog,blogging,write novel,free'},
+      { name: 'description', content: 'Write to express the best blogging free adfree website which is opensource' }
+    ]);
+   }
 
   ngOnInit() {
     this.location.subscribe((ev: PopStateEvent) => {

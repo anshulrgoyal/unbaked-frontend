@@ -14,6 +14,7 @@ export class ShowComponent implements OnInit {
   neww
   contents: string[] = [];
 show=false
+user
   constructor(private data: DataService) { }
 
   ngOnInit() {
@@ -34,6 +35,12 @@ show=false
       const data = res.json();
       console.log(data);
       this.neww = data.blog;
+      this.show=true
+    });
+    this.data.getBolg('user').subscribe((res: Response) => {
+      const data = res.json();
+      console.log(data);
+      this.user = data.blog;
       this.show=true
     });
 

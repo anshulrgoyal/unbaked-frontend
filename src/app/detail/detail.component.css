@@ -120,3 +120,31 @@
       top: 300px;
       margin-left: 20px;
   }
+  .title{
+ font-size: 16px;
+ 
+ color:#E91E63;
+
+}
+.he{
+    padding: 0px;
+    margin: 20px;
+    margin-right: 90%
+}
+.do{
+    display: inline-block;
+    margin-left: 36px;
+    vertical-align: middle;
+
+}
+mat-icon{
+    margin-left: 10px !important;
+    padding:20px !important;
+    border-radius: 50% !important;
+    transition: .3s;
+    border:solid 2px ghostwhite;
+}
+mat-icon:hover{
+    border: solid 2px #E91E63;
+
+}

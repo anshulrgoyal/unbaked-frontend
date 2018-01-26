@@ -33,5 +33,10 @@ delete=(event)=>{
 }
 onsubmit=(form)=>{
   console.log(form)
+  this.dataService.editBlog(this.blog._id,form.value).subscribe((res:Response)=>{
+    if(res){
+      this.router.navigate(['/',res.json()._id])
+    }
+  })
 }
 }

@@ -4,13 +4,16 @@
         
   <mat-card-title>
     <div class="cap">
-        <mat-icon *ngIf="comment.author.image=='default'">account_circle</mat-icon>
+        <mat-icon *ngIf="comment.author.image=='default'">account_circle</mat-icon><br>
         <img mat-card-avatar [src]="comment.author.image" alt="" class="comment-img" *ngIf="comment.author.image!='default'">
-        {{comment.author.first}}
+       <br> {{comment.author.first}}
     </div>
       
     </mat-card-title> 
-</mat-card-header>
-{{comment.text}}   
+</mat-card-header >
+<div class="new">
+        {{comment.text}}  
+</div>
+ 
 
 </mat-card>

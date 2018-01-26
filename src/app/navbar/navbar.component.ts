@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 import { DataService } from '../data.service.service';
 import { ActivatedRoute } from '@angular/router';
 import { UrlSegment } from '@angular/router';
-
+import {MatSnackBar} from '@angular/material';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -13,7 +13,10 @@ import { UrlSegment } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 second=false
-  constructor(private auth: AuthService,  private route: ActivatedRoute,private data:DataService) { }
+  constructor(private auth: AuthService,
+      private route: ActivatedRoute,
+      private data:DataService,
+    ) { }
   show = false
   showit=true;
   token:any;
@@ -39,7 +42,7 @@ second=false
       this.second=true;
     }
 
-
+    ;
 
   }
   showIt = () => {

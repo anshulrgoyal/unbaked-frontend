@@ -3,90 +3,95 @@
 <app-m [text]="card.name" *ngIf="done"></app-m>
 <mat-drawer-container class="example-container" *ngIf="done">
   <mat-drawer-content>
-
     <div class="colorr">
       <br>
       <div class="small">
         <div class="container">
-       
+          <div class="title">
+              BY: <br>
+              <mat-icon *ngIf="card.author.image==default" >account_circle</mat-icon>
+              <img src="{{card.author.image}}" alt="" style="height:30px;width:30px;border-radius:50%" *ngIf="card.author.image!=default">
+            <br>  {{card.author.first}}
+          </div>
+         
           <img [src]="card.image" alt="" class="image">
           <div class="blog">
             {{card.text}}
           </div>
         </div>
       </div>
-      
-              
-         <mat-card>
-          <mat-icon class="icon" *ngIf="show" (click)="liked()" >favorite</mat-icon>
+      <div class="fixed">
+          <span class="do">
+              {{card.like}}
+            </span>
+            <br>
+            <br>
+       
+          <mat-icon class="icon" *ngIf="show" (click)="liked()">favorite</mat-icon>
           <mat-icon class="icon" *ngIf="!show" (click)="liked()" style="color:#e91e63">favorite</mat-icon>
-
-      
-      
-        <br> Liked By: {{card.like}}
-    
-      
-          
-      
-         </mat-card>
-                  
-            
-    
-         
+       
+     <br>
+     
+        <mat-icon *ngIf="book" style="color:yellow" (click)="booked()">bookmark</mat-icon> 
+        <mat-icon *ngIf="!book" (click)="booked()">bookmark</mat-icon> 
+     
+       
       </div>
      
-      <div class="heading">
-        <div class="main">
-          You May Like.....
+       <br>
+       
+      
+    </div>
+    <div class="heading">
+      <div class="main">
+        You May Like.....
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-4" *ngFor="let item of data">
+          <app-card-new [card]="item"></app-card-new>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-2 col-sm-4" *ngFor="let item of data">
-            <app-card-new [card]="item"></app-card-new>
+    </div>
+    <br>
+    <div class="container">
+      <mat-accordion multi="true">
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [expanded]="isOpen">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Comment
+            </mat-panel-title>
+            <mat-panel-description>
+              {{panelOpenState ? 'View all comments' : 'All comments'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div *ngFor="let comments of card.comment">
+            <app-comment [comment]="comments"></app-comment>
           </div>
-        </div>
-      </div>
-      <br>
-      <div class="container">
-        <mat-accordion>
-          <mat-expansion-panel
-          (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                Comment
-              </mat-panel-title>
-              <mat-panel-description>
-                {{panelOpenState ? 'View all comments' : 'All comments'}}
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div *ngFor="let comments of card.comment">
-              <app-comment [comment]="comments"></app-comment>
-            </div>
-          </mat-expansion-panel>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                Add Comment
-              </mat-panel-title>
-              <mat-panel-description>
-                Join Dicussion
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <form (ngSubmit)="onSubmit(form)" #form='ngForm'>
+          <app-comment [comment]="comment" *ngIf="comment.text"></app-comment>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [expanded]="formed">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Add Comment
+            </mat-panel-title>
+            <mat-panel-description>
+              Join Dicussion
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <form (ngSubmit)="onSubmit(form)" #form='ngForm'>
             <mat-form-field class="example-full-width">
-             
-                  <input matInput placeholder="Comment" value="" ngModel name="text">
-             
+              <input matInput placeholder="Comment" value="" [(ngModel)]="comment.text" name="text" (focus)="addMe()">
             </mat-form-field>
             <button mat-button type="submit">Submit</button>
           </form>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </div>
-    
-    <a [routerLink]="['/',card._id,'edit']"><button mat-button>edit</button></a>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <a [routerLink]="['/',card._id,'edit']">
+      <button mat-button>edit</button>
+    </a>
     <div class="footer">
       Made with love by Anshul
     </div>

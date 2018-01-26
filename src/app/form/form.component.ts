@@ -12,7 +12,9 @@ import { Router } from '@angular/router';
 })
 export class FormComponent implements OnInit {
   blog: any = { name: '', text: '', image: '', tags: '' };
-  constructor(private data: DataService, private http: Http,private router:Router) { }
+  constructor(private data: DataService,
+     private http: Http,
+     private router:Router) { }
   formData: any;
   file: any;
   ngOnInit() {
@@ -24,6 +26,10 @@ export class FormComponent implements OnInit {
       this.router.navigate(["/",res.json()._id])
    })
     }
+    enter=(event)=>{
+      if(event.key=="Enter"){
+        this.blog.text.concat('<br>')
+      }
   }
   /*getFile = (event) => {
     let fileList: FileList = event.target.files;
@@ -39,4 +45,4 @@ export class FormComponent implements OnInit {
       })
         
     }*/
-  
+  }

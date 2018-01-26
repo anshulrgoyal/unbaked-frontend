@@ -41,6 +41,8 @@ import { RouteGardService } from './route-gard.service';
 import { SearchComponent } from './search/search.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {AppearDirective} from './appaer.directive';
+import {VerificationComponent} from './verification/verification.component'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 const appRoutes: Routes = [{
@@ -53,6 +55,8 @@ const appRoutes: Routes = [{
   path: 'new', component: NewComponent, canActivate: [RouteGardService]
 }, {
   path:'search/:term',component:SearchComponent
+},{
+  path:'user/:token',component:VerificationComponent
 },{
   path: ':id/edit', component: EditComponent
 },
@@ -83,6 +87,7 @@ const appRoutes: Routes = [{
     DashComponent,
     SearchComponent,
    AppearDirective,
+   VerificationComponent
   ],
   imports: [
     BrowserModule,
@@ -100,7 +105,8 @@ const appRoutes: Routes = [{
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ],
   providers: [DataService, AuthService, InterService, RouteGardService],
   bootstrap: [AppComponent]

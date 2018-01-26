@@ -64,6 +64,7 @@
   .block{
       text-align: center;
       padding: 40px;
+      text-justify: distribute-all-lines;
   }
   .colorr{
       margin-bottom: 50px;
@@ -82,3 +83,15 @@
      margin: 0 auto;
      
  }
+ textarea:focus{
+text-decoration: none;
+outline: none;
+border:none;
+background-color: ghostwhite;
+ }
+ textarea{
+    text-decoration: none;
+    outline: none;
+    border:none;
+    background-color: ghostwhite;
+     }

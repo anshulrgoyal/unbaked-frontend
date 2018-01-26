@@ -12,7 +12,7 @@ export class BlogComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-   // this.blog = this.data.blog;
+    this.blog = this.data.blog;
   }
 
 }
